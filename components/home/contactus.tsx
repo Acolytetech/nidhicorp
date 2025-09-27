@@ -2,7 +2,6 @@
 import sendWhatsApp from "@/utils/sendwhatsapp";
 import Image from "next/image";
 import { useState, ChangeEvent, FormEvent } from "react";
-import Hero from "./hero";
 
 interface FormData {
   name: string;
@@ -48,7 +47,7 @@ export default function Contactus() {
 
        <div className="w-full rounded-4xl overflow-hidden">
         <Image
-          src="/img/dahi-vada2.jpg" // 👈 replace with your image path
+          src="/img/Dahi-Vada2.jpg" // 👈 replace with your image path
           alt="Restaurant"
 width={70}
 height={70}          className="w-full h-full object-cover object-center rounded-md shadow-md"
