@@ -1,0 +1,69 @@
+"use client";
+
+import Image from "next/image";
+import { sendWhatsAppOrder } from "@/utils/whatsapp";
+import { FaWhatsapp } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+type OfferItem = {
+  name: string;
+  discount: string;
+  img: string;
+};
+
+export default function Offers() {
+  const phone = "919664455006"; // common phone number
+
+  const offers: OfferItem[] = [
+    { name: "Kanji Vada", discount: "50", img: "/img/kanjivdda1.jpeg" },
+    { name: "Dahi Vada", discount: "50", img: "/img/single dahi vada.jpeg" },
+  ];
+
+  return (
+    <section className="py-16 max-w-6xl mx-auto   bg-white relative">
+      <div className="container mx-auto grid md:grid-cols-2 gap-8">
+        {offers.map((offer, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: idx * 0.2 }}
+            className="bg-[#1E2430] text-white rounded-lg flex items-center p-6 gap-6 shadow-lg"
+          >
+            {/* Image */}
+            <div className="relative p-14 w-46 h-56 flex-shrink-0  ">
+              <Image
+                src={offer.img}
+                alt={offer.name}
+                fill
+                className="object-contain"
+              />
+            </div>
+
+            {/* Details */}
+            <div>
+              <h3 className="font-cursive text-xl font-bold mb-2">
+                {offer.name}
+              </h3>
+              <p className="text-3xl font-bold mb-4">
+                {offer.discount}Rs
+                <span className="text-lg font-normal italic">/1pcs</span>
+              </p>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() =>
+                  sendWhatsAppOrder(phone, offer.name, offer.discount)
+                }
+                className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2"
+              >
+                Order Now <FaWhatsapp size={20} />
+              </motion.button>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+}
