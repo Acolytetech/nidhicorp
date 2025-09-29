@@ -29,15 +29,15 @@ export default function Offers() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: idx * 0.2 }}
-            className="bg-[#1E2430] text-white rounded-lg flex items-center p-6 gap-6 shadow-lg"
+            className="bg-[#1E2430] text-white rounded-lg flex items-center p-6 gap-6 shadow-lg "
           >
             {/* Image */}
-            <div className="relative p-14 w-46 h-56 flex-shrink-0  ">
+            <div className="relative p-14 w-46 h-56 flex-shrink-0 flex-1 overflow-hidden rounded-lg  ">
               <Image
                 src={offer.img}
                 alt={offer.name}
                 fill
-                className="object-contain"
+                className="object-cover rounded-lg hover:scale-105 duration-300 "
               />
             </div>
 
@@ -56,9 +56,9 @@ export default function Offers() {
                 onClick={() =>
                   sendWhatsAppOrder(phone, offer.name, offer.discount)
                 }
-                className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2"
+                className="bg-yellow-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 group duration-300"
               >
-                Order Now <FaWhatsapp size={20} />
+                Order Now <FaWhatsapp  size={32} className="text-green-600 group-hover:text-white " />
               </motion.button>
             </div>
           </motion.div>

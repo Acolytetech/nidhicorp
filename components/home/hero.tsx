@@ -73,9 +73,9 @@
 //   );
 // }
 
-
 "use client";
 import { motion } from "framer-motion";
+import { MdGroupAdd } from "react-icons/md";
 
 export default function Hero() {
   return (
@@ -86,15 +86,14 @@ export default function Hero() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
-        
       }}
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60 z-1"></div>
+      <div className="absolute inset-0 bg-black/40 z-1"></div>
 
       <div className="text-center max-w-3xl z-2">
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-snug mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-yellow-400"
+          className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-snug mb-6 bg-clip-text text-transparent bg-white"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -110,22 +109,40 @@ export default function Hero() {
           viewport={{ once: true }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
-        We aim to make Curd Vada (Dahi Vada), Kanji Vada easily accessible across
-India, focusing on distribution through railway stations, bus stops, local
-shopkeepers, and e-commerce platforms.
+          We aim to make Curd Vada (Dahi Vada), Kanji Vada easily accessible
+          across India, focusing on distribution through railway stations, bus
+          stops, local shopkeepers, and e-commerce platforms.
         </motion.p>
-
-        <motion.button
-          whileHover={{ scale: 1.05, backgroundColor: "#f97316" }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-orange-500 hover:bg-orange-600 transition px-6 py-3 rounded-md font-semibold shadow-lg"
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-        >
-          Order Now
-        </motion.button>
+        <div className="flex flex-col sm:flex-row w-fit gap-4 justify-center mx-auto ">
+          <motion.button
+            whileHover={{ scale: 1.05, backgroundColor: "#f97316" }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-orange-500 hover:bg-orange-600 transition px-6 py-3 rounded-md font-semibold shadow-lg capitalize"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.3 }}
+            onClick={() => {
+              window.open("/about" ,"_self");
+            }}
+          >
+            Konw more
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-white text-orange-500  transition px-6 py-3 rounded-md font-semibold shadow-lg capitalize flex items-center gap-2"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.3 }}
+            onClick={() => {
+              window.open("/partner");
+            }}
+          >
+            Become A partner <MdGroupAdd size={24}/>
+          </motion.button>
+        </div>
       </div>
     </section>
   );

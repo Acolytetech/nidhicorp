@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/global_component/Navbar";
 import { Pacifico } from "next/font/google";
 import Footer from "@/components/global_component/Footer";
+import { Toaster } from "sonner";
 
 export const pacifico = Pacifico({ subsets: ["latin"], weight: "400" });
 const geistSans = Geist({
@@ -33,6 +34,7 @@ export default function RootLayout({
       >
         <Navbar/>
         {children}
+         <Toaster position="top-center" richColors />
         <Footer/>
       </body>
     </html>
