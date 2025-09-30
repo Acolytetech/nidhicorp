@@ -2,3 +2,6 @@
 Button{
     cursor: pointer;
 }
+*{
+    /* outline: auto; */
+}

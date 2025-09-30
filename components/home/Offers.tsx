@@ -20,8 +20,8 @@ export default function Offers() {
   ];
 
   return (
-    <section className="py-16 max-w-6xl mx-auto   bg-white relative">
-      <div className="container mx-auto grid md:grid-cols-2 gap-8">
+    <section className="py-16 max-w-6xl overflow-hidden mx-auto   bg-white relative">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-1 sm:px-0">
         {offers.map((offer, idx) => (
           <motion.div
             key={idx}
@@ -32,7 +32,7 @@ export default function Offers() {
             className="bg-[#1E2430] text-white rounded-lg flex items-center p-6 gap-6 shadow-lg "
           >
             {/* Image */}
-            <div className="relative p-14 w-46 h-56 flex-shrink-0 flex-1 overflow-hidden rounded-lg  ">
+            <div className="relative p-14 w-30 h-36 sm:w-46  sm:h-56 flex-shrink-0 flex-1 overflow-hidden rounded-lg  ">
               <Image
                 src={offer.img}
                 alt={offer.name}

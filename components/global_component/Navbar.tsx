@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import OrderForm from "./OrderForm";
+import { BsWhatsapp } from "react-icons/bs";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -93,7 +94,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden bg-red-600 overflow-hidden transition-max-height duration-500 ease-in-out ${
+          className={`md:hidden bg-white overflow-hidden transition-max-height duration-500 ease-in-out ${
             isOpen ? "max-h-96 py-4" : "max-h-0"
           }`}
         >
@@ -102,7 +103,7 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               className={`block px-4 py-2 font-medium rounded-full transition-colors duration-300 hover:bg-red-700 ${
-                pathname === link.href ? "bg-yellow-700 text-white" : "text-white"
+                pathname === link.href ? "bg-yellow-400 text-black" : "text-black"
               }`}
               onClick={() => setIsOpen(false)}
             >
@@ -114,9 +115,9 @@ export default function Navbar() {
               setShowOrderForm(true);
               setIsOpen(false);
             }}
-            className="block mx-4 mt-2 px-4 py-2 font-bold bg-white text-red-600 rounded hover:bg-gray-100 transition-all duration-300"
+            className=" flex flex-row items-center gap-2 mx-4 mt-2 px-4 py-2 font-bold bg-green-500 text-white rounded hover:bg-gray-100 transition-all duration-300"
           >
-            Order Now
+            Order Now <BsWhatsapp size={24}/>
           </button>
         </div>
       </nav>

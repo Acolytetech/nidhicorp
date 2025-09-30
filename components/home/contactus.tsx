@@ -42,7 +42,7 @@ export default function Contactus() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start mt-10 px-4 py-8">
+    <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start mt-10 px-2 mb-12">
       {/* Left Side Form */}
 
        <div className="w-full rounded-4xl overflow-hidden">
@@ -57,8 +57,8 @@ height={70}          className="w-full h-full object-cover object-center rounded
    
 
       {/* Right Side Image */}
-        <div>
-        <h2 className="text-3xl font-bold mb-6 font-[cursive] text-yellow-500">
+        <div className="bg-yellow-100 p-4 rounded-lg">
+        <h2 className="text-3xl font-bold mb-6 font-[cursive] text-black">
 Get in touch        </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
@@ -100,7 +100,7 @@ Get in touch        </h2>
 
           <button
             type="submit"
-            className="bg-black hover:bg-yellow-500 text-white font-bold px-6 py-2 rounded-full"
+            className="bg-black w-full hover:bg-yellow-500 text-white font-bold px-6 py-2 rounded-full"
           >
 Submit          </button>
         </form>

@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { toast } from "sonner"; // Import Sonner
+import emailjs from "emailjs-com";
+
 
 interface OrderFormProps {
   isOpen: boolean;
@@ -51,29 +53,57 @@ export default function OrderForm({ isOpen, onClose }: OrderFormProps) {
     return isValid;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
 
-    if (!validateForm()) return;
+  if (!validateForm()) return;
 
-    // ✅ Success
-    toast.success("Order placed successfully!");
+  // ✅ Send Email using EmailJS
+  emailjs
+    .send(
+      "your_service_id", // EmailJS Service ID
+      "your_template_id", // EmailJS Template ID
+      {
+        name: formData.name,
+        contact: formData.contact,
+        email: formData.email,
+        item: formData.item,
+        quantity: formData.quantity,
+      },
+      "your_public_key" // EmailJS Public Key
+    )
+    .then(
+      () => {
+        // ✅ WhatsApp message
+        const whatsappNumber = "919876543210"; // <- yahan apna WhatsApp number dalna hai
+        const message = `🛒 New Order Received!\n\n👤 Name: ${formData.name}\n📞 Contact: ${formData.contact}\n✉️ Email: ${formData.email}\n🍴 Item: ${formData.item}\n🔢 Quantity: ${formData.quantity}`;
 
-    // Reset form
-    setFormData({
-      name: "",
-      contact: "",
-      email: "",
-      item: "",
-      quantity: 1,
-    });
-    setErrors({ name: "", contact: "", email: "" });
+        // User ke phone me WhatsApp open hoga
+        window.open(
+          `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
+          "_blank"
+        );
 
-    // Close modal after short delay
-    setTimeout(() => {
-      onClose();
-    }, 1500);
-  };
+        toast.success("Order placed successfully!");
+        setFormData({
+          name: "",
+          contact: "",
+          email: "",
+          item: "",
+          quantity: 1,
+        });
+        setErrors({ name: "", contact: "", email: "" });
+
+        setTimeout(() => {
+          onClose();
+        }, 1500);
+      },
+      () => {
+        toast.error("Failed to send email. Try again!");
+      }
+    );
+};
+
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100]">

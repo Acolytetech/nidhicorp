@@ -6,15 +6,15 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-2  gap-12 items-center">
+    <section className="py-8 sm:py-20 bg-white">
+      <div className="max-w-6xl  mx-auto sm:px-4 grid grid-cols-1 lg:grid-cols-2  gap-12 items-center">
         {/* Text Content */}
         <div className="space-y-6 bg-gradient-to-br from-yellow-500 via-yellow-200 to-white p-8 rounded-4xl">
           <p className="text-orange-500 font-semibold uppercase tracking-wider">
             About Us
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 flex items-center gap-2">
-            Welcome to <span>Nidhi Corp</span>
+            Welcome to Nidhi Corp
           </h2>
           <p className="text-gray-600">
             Nidhi Corp specializes in providing high-quality, ready-to-eat Curd
@@ -29,8 +29,8 @@ export default function AboutSection() {
           </p>
 
           {/* Stats */}
-          <div className="flex flex-col sm:flex-row gap-6 mt-6 ">
-            <div className="flex items-center gap-4">
+          <div className="flex flex-row gap-4 mt-6 ">
+            <div className="flex items-center gap-2">
               <span className="text-4xl font-bold text-orange-500">15+</span>
               <div>
                 <p className="text-gray-900 font-semibold">Years of</p>
@@ -59,7 +59,7 @@ export default function AboutSection() {
           </motion.button>
         </div>
         {/* Images Grid */}
-        <div className="grid grid-cols-2 gap-4 relative">
+        <div className="grid grid-cols-2 px-2 gap-4 relative">
           <motion.div
             className="overflow-hidden h-fit rounded-lg shadow-lg mt-8"
             whileHover={{ scale: 1.05 }}

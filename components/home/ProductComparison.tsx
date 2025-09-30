@@ -33,8 +33,8 @@ const ProductComparison: FC = () => {
         </p>
       </div>
 
-      {/* Horizontal scrollable cards */}
-      <div className="flex flex-wrap gap-6 overflow-x-auto  p-6">
+      {/* Responsive grid layout */}
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3  max-w-6xl mx-auto gap-6">
         {products.map((p, idx) => {
           const pricePercent = ((p.priceMax - p.priceMin) / p.priceMax) * 100 || 100;
           return (
@@ -44,7 +44,7 @@ const ProductComparison: FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
-              className="min-w-[280px] bg-gray-900 rounded-2xl p-6 shadow-xl mx-auto border-l-4 border-yellow-400 hover:scale-105 transition-transform"
+              className="bg-gray-900 rounded-2xl p-6 shadow-xl border-l-4 border-yellow-400 hover:scale-105 transition-transform"
             >
               <h3 className="text-xl font-bold text-yellow-400 mb-2">{p.name}</h3>
               <p className="text-gray-300 mb-1"><span className="font-semibold">Focus:</span> {p.focus}</p>
