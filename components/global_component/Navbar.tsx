@@ -6,6 +6,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import OrderForm from "./OrderForm";
 import { BsWhatsapp } from "react-icons/bs";
+import { sendWhatsAppOrdernavbar } from "@/utils/whatsapp";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,10 +52,18 @@ export default function Navbar() {
                 </Link>
               ))}
               <button
-                onClick={() => setShowOrderForm(true)}
-                className="bg-white text-yellow-400 font-bold px-4 py-2 rounded-full shadow-md hover:bg-black hover:text-white transition-all duration-300"
+                // onClick={() => setShowOrderForm(true)}
+                 onClick={() =>sendWhatsAppOrdernavbar()}
+
+
+
+                //   onClick={() =>
+                //   sendWhatsAppOrder(phone, offer.name, offer.discount)
+                // }
+                                
+                className="bg-white flex gap-2 text-green-600 font-bold px-4 py-2 rounded-full shadow-md hover:bg-green-600 hover:text-white transition-all duration-300"
               >
-                Order Now
+            Order Now <BsWhatsapp size={24}/>
               </button>
             </div>
 
@@ -112,7 +121,7 @@ export default function Navbar() {
           ))}
           <button
             onClick={() => {
-              setShowOrderForm(true);
+              sendWhatsAppOrdernavbar();
               setIsOpen(false);
             }}
             className=" flex flex-row items-center gap-2 mx-4 mt-2 px-4 py-2 font-bold bg-green-500 text-white rounded hover:bg-gray-100 transition-all duration-300"

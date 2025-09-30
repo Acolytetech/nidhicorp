@@ -54,7 +54,7 @@ export default function Offers() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() =>
-                  sendWhatsAppOrder(phone, offer.name, offer.discount)
+                  sendWhatsAppOrder(phone, offer.name,)
                 }
                 className="bg-yellow-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 group duration-300"
               >

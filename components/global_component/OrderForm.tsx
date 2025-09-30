@@ -187,7 +187,7 @@ const handleSubmit = (e: React.FormEvent) => {
           <input
             type="number"
             placeholder="Quantity"
-            min={1}
+            min={10}
             value={formData.quantity}
             onChange={(e) =>
               setFormData({ ...formData, quantity: Number(e.target.value) })
