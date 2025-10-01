@@ -12,7 +12,6 @@ type OfferItem = {
 };
 
 export default function Offers() {
-  const phone = "919664455006"; // common phone number
 
   const offers: OfferItem[] = [
     { name: "Kanji Vada", discount: "50", img: "/img/kanjivdda1.jpeg" },
@@ -54,7 +53,7 @@ export default function Offers() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() =>
-                  sendWhatsAppOrder(phone, offer.name,)
+                  sendWhatsAppOrder(offer.name,`${offer.discount}RS`)
                 }
                 className="bg-yellow-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 group duration-300"
               >
