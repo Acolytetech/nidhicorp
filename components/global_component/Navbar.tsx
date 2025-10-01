@@ -32,7 +32,8 @@ export default function Navbar() {
                 alt="nidhi corp logo"
                 width={160}
                 height={50}
-                className="object-contain"
+                className="object-contain cursor-pointer"
+                onClick={()=>{window.open('/','_self')}}
               />
             </div>
 

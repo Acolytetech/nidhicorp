@@ -1,10 +1,9 @@
 // app/about/page.js  (or pages/about.js if using pages directory)
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import ProductComparison from "@/components/home/ProductComparison";
 import AboutSection from "@/components/home/AboutSection";
+import { sendWhatsAppOrdernavbar } from "@/utils/whatsapp";
 
 export default function About() {
   return (
@@ -37,7 +36,6 @@ export default function About() {
 
       {/* About Section */}
     <AboutSection/>
-      <ProductComparison />
 
       {/* Optional Call-to-Action Section */}
       <section className="bg-yellow-50 py-16 text-center">
@@ -51,6 +49,7 @@ export default function About() {
           Taste the Authentic Flavors Today!
         </motion.h3>
         <motion.button
+        onClick={()=>sendWhatsAppOrdernavbar()}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="bg-orange-500 hover:bg-black text-white font-semibold py-3 px-8 rounded-md transition duration-300"
