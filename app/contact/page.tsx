@@ -154,7 +154,7 @@ Message: ${formData.message || "N/A"}`;
             <div>
               <p className="font-semibold">Address:</p>
               <p>
-                71A, Street 2, First Block, Setia Colony, Sriganganagar,
+                Geeta Bhawan, Plot No. 63- A-1, Basement, Vijay Singh Pathik Nagar, Kalwad Road, Jhotwara Jaipur- (Raj. ) 302012  ,
                 Rajasthan
               </p>
             </div>
@@ -173,7 +173,7 @@ Message: ${formData.message || "N/A"}`;
       {/* Optional Map Section */}
       <section className="w-full h-96">
         <iframe
-          src="https://maps.google.com/maps?q=Sriganganagar,Rajasthan&t=&z=13&ie=UTF8&iwloc=&output=embed"
+         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14226.842937767848!2d75.72971079283315!3d26.94438335298644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db3d8c0c023c9%3A0x4257afe078c55277!2s74%20Vijay%20Singh%20pathik%20Nagar%20Gurjar%20Colony!5e0!3m2!1sen!2sin!4v1759488116917!5m2!1sen!2sin"
           className="w-full h-full border-0"
           allowFullScreen
           loading="lazy"

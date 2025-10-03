@@ -1,4 +1,4 @@
-// components/ProductComparisonModern.tsx
+// components/ProductComparisonTableResponsive.tsx
 "use client";
 
 import { FC } from "react";
@@ -15,56 +15,94 @@ interface Product {
 }
 
 const products: Product[] = [
-  { name: "Nidhi Corp Gits", priceMin: 50, priceMax: 50, focus: "Protein-rich snack", packaging: "Hygienic, long shelf-life", market: "Busy commuters", usp: "Protein-packed snack" },
-  { name: "Food Products", priceMin: 40, priceMax: 100, focus: "Ready-to-eat meals", packaging: "Standard", market: "General consumers", usp: "Wide range of meals" },
-  { name: "MTR Foods", priceMin: 50, priceMax: 150, focus: "Convenience foods", packaging: "Standard", market: "General consumers", usp: "Popular Indian meals" },
-  { name: "Haldiram's", priceMin: 30, priceMax: 200, focus: "Snacks", packaging: "Standard", market: "Snack lovers", usp: "Famous for snacks" },
-  { name: "Britannia", priceMin: 10, priceMax: 100, focus: "Baked goods", packaging: "Standard", market: "Families", usp: "Popular for baked goods" },
-  { name: "ITC Master Chef", priceMin: 50, priceMax: 150, focus: "Ready-to-eat meals", packaging: "Standard", market: "Busy individuals", usp: "Premium ready meals" },
+  {
+    name: "Nidhi Corp Gits",
+    priceMin: 60,
+    priceMax: 60,
+    focus: "Protein-rich snack",
+    packaging: "Hygienic, long shelf-life",
+    market: "Busy commuters, health conscious consumers",
+    usp: "Protein-packed, ready-to-eat snack",
+  },
+  {
+    name: "Other Brands",
+    priceMin: 50,
+    priceMax: 150,
+    focus: "Ready-to-eat meals",
+    packaging: "Standard",
+    market: "General consumers",
+    usp: "Wide range of meals",
+  },
 ];
 
 const ProductComparison: FC = () => {
+  const headers = ["Feature", ...products.map((p) => p.name)];
+
+  const rows = [
+    { label: "Focus", key: "focus" },
+    { label: "Packaging", key: "packaging" },
+    { label: "Market", key: "market" },
+    { label: "USP", key: "usp" },
+    {
+      label: "Price (₹) Range",
+      key: "price",
+      render: (p: Product) => `${p.priceMin} - ${p.priceMax}`,
+    },
+  ];
+
   return (
-    <section className="py-20 px-6 md:px-12 lg:px-20 bg-black text-white">
+    <section className="py-16 px-4 sm:px-6 lg:px-20 bg-black text-white">
       <div className="max-w-7xl mx-auto text-center mb-12">
-        <h2 className="text-4xl font-bold text-yellow-400">Product Comparison</h2>
-        <p className="text-gray-300 mt-2 max-w-2xl mx-auto">
-          Compare top ready-to-eat products with a sleek modern style.
+        <h2 className="text-3xl sm:text-4xl font-bold text-yellow-400">
+          Product Comparison
+        </h2>
+        <p className="text-gray-300 mt-2 max-w-2xl mx-auto text-sm sm:text-base">
+          Compare top ready-to-eat products in a clean, table-like format.
         </p>
       </div>
 
-      {/* Responsive grid layout */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3  max-w-6xl mx-auto gap-6">
-        {products.map((p, idx) => {
-          const pricePercent = ((p.priceMax - p.priceMin) / p.priceMax) * 100 || 100;
-          return (
-            <motion.div
-              key={p.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.5 }}
-              className="bg-gray-900 rounded-2xl p-6 shadow-xl border-l-4 border-yellow-400 hover:scale-105 transition-transform"
-            >
-              <h3 className="text-xl font-bold text-yellow-400 mb-2">{p.name}</h3>
-              <p className="text-gray-300 mb-1"><span className="font-semibold">Focus:</span> {p.focus}</p>
-              <p className="text-gray-300 mb-1"><span className="font-semibold">Market:</span> {p.market}</p>
-              <p className="text-gray-300 mb-1"><span className="font-semibold">USP:</span> {p.usp}</p>
-
-              {/* Price bar visualization */}
-              <div className="mt-4">
-                <p className="text-gray-400 text-sm mb-1">Price: ₹{p.priceMin} - ₹{p.priceMax}</p>
-                <div className="w-full bg-gray-700 h-3 rounded-full">
-                  <div
-                    className="bg-yellow-400 h-3 rounded-full"
-                    style={{ width: `${pricePercent}%` }}
-                  ></div>
-                </div>
-              </div>
-            </motion.div>
-          );
-        })}
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="overflow-x-auto"
+      >
+        <table className="min-w-full border-collapse border border-gray-700 text-sm sm:text-base">
+          <thead>
+            <tr className="bg-gray-900">
+              {headers.map((h, idx) => (
+                <th
+                  key={idx}
+                  className="px-4 sm:px-6 py-3 text-left text-yellow-400 font-semibold border-b border-gray-700 whitespace-nowrap"
+                >
+                  {h}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, rIdx) => (
+              <tr
+                key={rIdx}
+                className="hover:bg-gray-800 transition-colors even:bg-gray-950"
+              >
+                <td className="px-4 sm:px-6 py-3 font-semibold text-gray-300 border-b border-gray-700 whitespace-nowrap">
+                  {row.label}
+                </td>
+                {products.map((p, pIdx) => (
+                  <td
+                    key={pIdx}
+                    className="px-4 sm:px-6 py-3 text-gray-300 border-b border-gray-700"
+                  >
+                    {row.render ? row.render(p) : p[row.key as keyof Product]}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </motion.div>
     </section>
   );
 };

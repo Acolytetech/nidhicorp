@@ -14,8 +14,8 @@ type OfferItem = {
 export default function Offers() {
 
   const offers: OfferItem[] = [
-    { name: "Kanji Vada", discount: "50", img: "/img/kanjivdda1.jpeg" },
-    { name: "Dahi Vada", discount: "50", img: "/img/single dahi vada.jpeg" },
+    { name: "Kanji Vada", discount: "60", img: "/img/kanjivada1.png" },
+    { name: "Dahi Vada", discount: "60", img: "/img/dahivada.png" },
   ];
 
   return (

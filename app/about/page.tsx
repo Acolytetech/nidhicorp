@@ -2,8 +2,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import AboutSection from "@/components/home/AboutSection";
 import { sendWhatsAppOrdernavbar } from "@/utils/whatsapp";
+import MissionVisionSection from "@/components/home/MissionVisionSection";
+import AboutSection2 from "@/components/home/AboutSection2";
 
 export default function About() {
   return (
@@ -35,7 +36,8 @@ export default function About() {
       </section>
 
       {/* About Section */}
-    <AboutSection/>
+    <AboutSection2/>
+    <MissionVisionSection/>
 
       {/* Optional Call-to-Action Section */}
       <section className="bg-yellow-50 py-16 text-center">

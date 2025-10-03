@@ -45,21 +45,20 @@ export default function Contactus() {
     <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start mt-10 px-2 mb-12">
       {/* Left Side Form */}
 
-       <div className="w-full rounded-4xl overflow-hidden">
         <Image
-          src="/img/Dahi-Vada2.jpg" // 👈 replace with your image path
+          src="/img/dahivadaeat.png" // 👈 replace with your image path
           alt="Restaurant"
-width={70}
-height={70}          className="w-full h-full object-cover object-center rounded-md shadow-md"
+          width={500}
+          height={300}
+          className=" max-h-[450px] object-cover object-center rounded-md shadow-md mx-auto"
         />
         {/* <Hero/> */}
-      </div>
-   
 
       {/* Right Side Image */}
-        <div className="bg-yellow-100 p-4 rounded-lg">
+      <div className="bg-yellow-100 p-4 rounded-lg">
         <h2 className="text-3xl font-bold mb-6 font-[cursive] text-black">
-Get in touch        </h2>
+          Get in touch{" "}
+        </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
@@ -102,7 +101,8 @@ Get in touch        </h2>
             type="submit"
             className="bg-black w-full hover:bg-yellow-500 text-white font-bold px-6 py-2 rounded-full"
           >
-Submit          </button>
+            Submit{" "}
+          </button>
         </form>
       </div>
     </div>

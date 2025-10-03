@@ -19,7 +19,7 @@ const reasons = [
   {
     icon: <FaShieldAlt className="text-yellow-400 w-8 h-8" />,
     title: "Hygienic Packaging",
-    description: "All products are packaged in hygienic, long-lasting packaging for maximum safety.",
+    description: "All products are packaged in hygienic, 8 days packaging for maximum safety.",
   },
   {
     icon: <FaSmile className="text-yellow-400 w-8 h-8" />,
@@ -44,7 +44,8 @@ const WhyChooseNidhi: FC = () => {
   {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/70 "></div>
       <div className="max-w-7xl mx-auto text-center mb-12 relative z-10">
-        <h2 className="text-4xl font-bold text-yellow-400">Why Choose Nidhi Corp?</h2>
+        <h2 className="text-xl sm:text-4xl font-bold text-yellow-400">Affordable quality with advanced packaging for safe and reliable doorstep distribution.
+ </h2>
         <p className="text-gray-300 mt-2 max-w-2xl mx-auto">
           Discover what makes our ready-to-eat meals and snacks stand out in quality, taste, and convenience.
         </p>
@@ -54,7 +55,7 @@ const WhyChooseNidhi: FC = () => {
         {reasons.map((reason, idx) => (
           <motion.div
             key={idx}
-            className="bg-gray-900/70 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform cursor-pointer"
+            className="bg-gray-900/70 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform "
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

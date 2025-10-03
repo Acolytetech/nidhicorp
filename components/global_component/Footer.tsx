@@ -11,7 +11,7 @@ const Footer = () => {
         <div>
           <h2 className="text-2xl font-bold mb-4">Nidhi Corp</h2>
           <ul className="space-y-2 text-gray-300">
-            <li>Jaipur, Rajasthan</li>
+            <li>Geeta Bhawan, Plot No. 63- A-1, Basement, Vijay Singh Pathik Nagar, Kalwad Road, Jhotwara Jaipur- (Raj. ) 302012  , Rajasthan</li>
             <li>+91 9269-965-604</li>
             <li>nidhicorp27@gmail.com</li>
           </ul>
@@ -29,6 +29,9 @@ const Footer = () => {
             </Link>
             <Link href="/contact" className="hover:text-white">
               Contact
+            </Link>
+            <Link href="/partner" className="hover:text-white">
+              Become A Partner
             </Link>
           </div>
         </div>

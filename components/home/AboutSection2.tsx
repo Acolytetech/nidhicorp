@@ -4,52 +4,51 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function AboutSection() {
+export default function AboutSection2() {
   return (
     <section className="py-8 sm:py-20 bg-white">
       <div className="max-w-6xl  mx-auto sm:px-4 grid grid-cols-1 lg:grid-cols-2  gap-12 items-center">
         {/* Text Content */}
         <div className="space-y-6 bg-gradient-to-br from-yellow-500 via-yellow-200 to-white p-8 rounded-4xl">
-          <p className="text-orange-500 font-semibold uppercase tracking-wider">
-            About Us
-          </p>
+          {/* <p className="text-orange-500 font-semibold uppercase tracking-wider">
+Our Story          </p> */}
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 flex items-center gap-2">
-            Welcome to Nidhi Corp
-          </h2>
+Our story          </h2>
           <p className="text-gray-600">
-            Nidhi Corp specializes in providing high-quality, ready-to-eat Curd
-            Vada (Dahi Vada), Kanji Vada that is packed with protein and
-            preserved using advanced packaging technology. Our product offers
-            convenience, freshness, and hygiene, meeting the growing demand for
-            nutritious, ready-to-consume snacks.
+            India faces widespread protein deficiency, especially among children and working adults. 
+            We set out to solve this problem by reinventing traditional snacks into protein-rich, 
+            hygienically prepared options. Through modern packaging innovations, we ensure these snacks 
+            stay fresh longer, are easy to consume on-the-go, and bring a perfect blend of health and taste 
+            to every bite.
           </p>
-          <p className="text-gray-600">
+          {/* <p className="text-gray-600">
             We take pride in our culinary expertise, blending fresh ingredients
             with innovative cooking techniques to delight your senses.
-          </p>
+          </p> */}
 
           {/* Stats */}
           <div className="flex flex-row gap-4 mt-6 ">
             <div className="flex items-center gap-2">
-              <span className="text-4xl font-bold text-orange-500">15+</span>
+              {/* <span className="text-4xl font-bold text-orange-500">15+</span> */}
               <div>
-                <p className="text-gray-900 font-semibold">Years of</p>
+                {/* <p className="text-gray-900 font-semibold">Years of</p> */}
                 <p className="text-gray-600 uppercase font-bold text-sm">
-                  Experience
-                </p>
+Curd Vada (Dahi Vada) and Kanji Vada details.
+- Features: Ready-to-eat, advanced packaging (8 days freshness), affordable pricing (₹60).
+- Distribution: Stations, bus stops, e-commerce, events.                </p>
               </div>
             </div>
             
           </div>
 
-          <motion.button
+          {/* <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={()=> {window.open('/about','_self');}}
             className="mt-6 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
           >
             Read More
-          </motion.button>
+          </motion.button> */}
         </div>
         {/* Images Grid */}
         <div className="grid grid-cols-2 px-2 gap-4 relative">
@@ -59,7 +58,8 @@ export default function AboutSection() {
             transition={{ duration: 0.5 }}
           >
             <Image
-              src="/img/dahivada.png"
+              src="/img/kanjivadaeat.png"
+
               alt="Restaurant Interior 1"
               width={500}
               height={400}
@@ -87,7 +87,8 @@ export default function AboutSection() {
             transition={{ duration: 0.5 }}
           >
             <Image
-              src="/img/kanjivadaeat.png"
+              src="/img/dahivada.png"
+
               alt="Dish 1"
               width={500}
               height={400}
